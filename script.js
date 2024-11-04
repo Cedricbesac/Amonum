@@ -9,3 +9,16 @@ accessButton.addEventListener('click', () => {
     alert('7');
   }
 });
+
+#IMG-20240613-WA0010.jpg {
+  width: 200px; /* Ajustez la largeur selon vos besoins */
+  margin-bottom: 20px; /* Ajustez la marge inférieure selon vos besoins */
+}
+
+.content {
+  text-align: center; /* Centre le contenu du formulaire */
+}
+#Primarylogo_Amovens.png {
+  width: 150px; /* Ajustez la largeur selon vos besoins */
+  margin-top: 20px; /* Ajustez la marge supérieure selon vos besoins */
+}
