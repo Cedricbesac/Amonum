@@ -8,8 +8,8 @@
 }
 
 input[type="text"] {
-  padding: 10px;
-  margin: 10px 0;
+  padding: 20px;
+  margin: 20px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -23,7 +23,7 @@ button {
   cursor: pointer;
 }
 #rechamonum.webp {
-  width: 200px; /* Ajustez la largeur selon vos besoins */
+  width: 100px; /* Ajustez la largeur selon vos besoins */
   margin-bottom: 20px; /* Ajustez la marge inférieure selon vos besoins */
 }
 
@@ -31,6 +31,6 @@ button {
   text-align: center; /* Centre le contenu du formulaire */
 }
 #Primarylogo_Amovens.png {
-  width: 150px; /* Ajustez la largeur selon vos besoins */
+  width: 70px; /* Ajustez la largeur selon vos besoins */
   margin-top: 20px; /* Ajustez la marge supérieure selon vos besoins */
 }
