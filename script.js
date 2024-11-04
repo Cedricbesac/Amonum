@@ -3,9 +3,9 @@ const rentalIdInput = document.getElementById('rental-id');
 
 accessButton.addEventListener('click', () => {
   const rentalId = rentalIdInput.value;
-  if (rentalId.length === 8) {
+  if (rentalId.length === 7) {
     window.location.href = `https://amovens.com/accounts/rentals/${rentalId}`;
   } else {
-    alert('Veuillez saisir un numéro de location valide (8 chiffres).');
+    alert('7');
   }
 });
