@@ -25,6 +25,7 @@ button {
 #rechamonum.webp {
   width: 3px; /* Ajustez la largeur selon vos besoins */
   margin-bottom: 1px; /* Ajustez la marge inférieure selon vos besoins */
+  height: auto
 }
 
 .content {
