@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 60px; /* To ensure text doesn't overlap with the fixed navbar */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 10; /* To keep it on top */
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 70px; /* Adjusted margin for the navbar */
+            max-width: 800px;
+            width: 100%;
+        }
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="?lang=es">Español</a>
+        <a href="?lang=fr">Français</a>
+        <a href="?lang=en">English</a>
+    </nav>
+
+    <div class="content" id="content"></div>
+
+    <footer>
+        © 2025 LW BCN 5539MGS
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const lang = params.get('lang') || 'en';
+        const translations = {
+            es: `
+                <a href="https://es.getaround.com/alquiler-de-coches/barcelona/renault-clio-1226695" target="_blank">https://es.getaround.com/alquiler-de-coches/barcelona/renault-clio-1226695</a>
+		
+		
+		🅿️ Parking BSM Marina Port - Carrer de la Marina, 13, 17, Sant Martí, 08005 Barcelona<br><br>
+                Descubre la Renault Clio 1.0 TCe Equilibre 5 puertas 🚗<br>
+                🌟 90 CV, 6 velocidades manuales, y todo el confort de una berlina. Esta Clio es perfecta tanto para la ciudad como para escapadas más largas.<br>
+                ✨ Exteriormente, su diseño moderno y firma luminosa te conquistarán.<br>
+                🛋️ Interior rediseñado, más espacio y confort para todos los ocupantes.<br>
+                📱 Sistema multimedia personalizable con pantalla táctil de hasta 9,3''. Conexión GPS mediante USB tipo A para una navegación sin complicaciones.
+            `,
+            fr: `
+		<a href="https://es.getaround.com/alquiler-de-coches/barcelona/renault-clio-1226695" target="_blank">https://es.getaround.com/alquiler-de-coches/barcelona/renault-clio-1226695</a>
+		
+		
+                🅿️ Parking BSM Marina Port - Carrer de la Marina, 13, 17, Sant Martí, 08005 Barcelone<br><br>
+                Découvrez la Renault Clio 1.0 TCe Équilibre 5 portes 🚗<br>
+                🌟 90 CV, 6 vitesses manuelles, et tout le confort d’une berline. Cette Clio est parfaite autant pour la ville que pour des escapades plus longues.<br>
+                ✨ Son design moderne et sa signature lumineuse extérieure vous séduiront.<br>
+                🛋️ Un intérieur repensé, offrant plus d’espace et de confort pour tous les passagers.<br>
+                📱 Système multimédia personnalisable avec écran tactile allant jusqu’à 9,3''. Connexion GPS via USB type A pour une navigation simplifiée.
+            `,
+            en: `
+         	<a href="https://es.getaround.com/alquiler-de-coches/barcelona/renault-clio-1226695" target="_blank">https://es.getaround.com/alquiler-de-coches/barcelona/renault-clio-1226695</a>
+		
+		
+		🅿️ Parking BSM Marina Port - Carrer de la Marina, 13, 17, Sant Martí, 08005 Barcelona<br><br>
+                Discover the Renault Clio 1.0 TCe Equilibre 5-door 🚗<br>
+                🌟 90 HP, 6-speed manual, and all the comfort of a sedan. This Clio is perfect for both city driving and longer getaways.<br>
+                ✨ Its modern design and distinctive lighting signature will win you over.<br>
+                🛋️ Redesigned interior with more space and comfort for all passengers.<br>
+                📱 Customizable multimedia system with a touchscreen up to 9.3''. GPS connection via USB Type A for hassle-free navigation.
+            `
+        };
+        document.getElementById('content').innerHTML = translations[lang];
+    </script>
+</body>
+</html>
