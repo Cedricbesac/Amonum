@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Terminal Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        select {
+            padding: 10px;
+            width: 80%;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #terminal {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .airline-logo {
+            max-width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Terminal</h1>
+        <label for="airline">Choose your airline:</label>
+        <select id="airline">
+            <option value="">-- Select an Airline --</option>
+            <option value="1" data-logo="logos/aegean_airlines.png">Aegean Airlines</option>
+            <option value="1" data-logo="logos/aeroflot.png">Aeroflot</option>
+            <option value="1" data-logo="logos/aerolineas_argentinas.png">Aerolíneas Argentinas</option>
+            <option value="1" data-logo="logos/air_algerie.png">Air Algérie</option>
+            <option value="1" data-logo="logos/air_baltic.png">Air Baltic</option>
+            <option value="1" data-logo="logos/air_canada_rouge.png">Air Canada Rouge</option>
+            <option value="1" data-logo="logos/air_china.png">Air China</option>
+            <option value="1" data-logo="logos/air_europa.png">Air Europa</option>
+            <option value="1" data-logo="logos/air_france.png">Air France</option>
+            <option value="1" data-logo="logos/air_nostrum.png">Air Nostrum</option>
+            <option value="1" data-logo="logos/american_airlines.png">American Airlines</option>
+            <option value="1" data-logo="logos/arkia_israeli_airlines.png">Arkia Israeli Airlines</option>
+            <option value="1" data-logo="logos/austrian_airlines.png">Austrian Airlines</option>
+            <option value="1" data-logo="logos/avianca.png">Avianca</option>
+            <option value="1" data-logo="logos/ba_cityflyer.png">BA Cityflyer</option>
+            <option value="1" data-logo="logos/british_airways.png">British Airways</option>
+            <option value="1" data-logo="logos/brussels_airlines.png">Brussels Airlines</option>
+            <option value="1" data-logo="logos/croatia_airlines.png">Croatia Airlines</option>
+            <option value="1" data-logo="logos/czech_airlines.png">Czech Airlines</option>
+            <option value="1" data-logo="logos/delta_air_lines.png">Delta Air Lines</option>
+            <option value="1" data-logo="logos/egyptair.png">EgyptAir</option>
+            <option value="1" data-logo="logos/el_al_israel_airlines.png">El Al Israel Airlines</option>
+            <option value="1" data-logo="logos/emirates.png">Emirates</option>
+            <option value="1" data-logo="logos/etihad.png">Etihad</option>
+            <option value="1" data-logo="logos/finnair.png">Finnair</option>
+            <option value="1" data-logo="logos/iberia.png">Iberia</option>
+            <option value="1" data-logo="logos/ita.png">ITA (Italia Trasporto Aereo SpA)</option>
+            <option value="1" data-logo="logos/joon.png">Joon</option>
+            <option value="1" data-logo="logos/klm.png">KLM</option>
+            <option value="1" data-logo="logos/korean_air.png">Korean Air</option>
+            <option value="1" data-logo="logos/latam_airlines.png">LATAM Airlines</option>
+            <option value="1" data-logo="logos/level.png">LEVEL</option>
+            <option value="1" data-logo="logos/lot_polish_airlines.png">LOT Polish Airlines</option>
+            <option value="1" data-logo="logos/lufthansa.png">Lufthansa</option>
+            <option value="1" data-logo="logos/qatar_airways.png">Qatar Airways</option>
+            <option value="1" data-logo="logos/royal_air_maroc.png">Royal Air Maroc</option>
+            <option value="1" data-logo="logos/royal_jordanian.png">Royal Jordanian</option>
+            <option value="1" data-logo="logos/sas.png">SAS Scandinavian Airlines</option>
+            <option value="1" data-logo="logos/shenzhen_airlines.png">Shenzhen Airlines</option>
+            <option value="1" data-logo="logos/singapore_airlines.png">Singapore Airlines</option>
+            <option value="1" data-logo="logos/smartwings.png">SmartWings</option>
+            <option value="1" data-logo="logos/swiss_international_airlines.png">Swiss International Airlines</option>
+            <option value="1" data-logo="logos/s7_airlines.png">S7 Airlines</option>
+            <option value="1" data-logo="logos/tap_air_portugal.png">TAP Air Portugal</option>
+            <option value="1" data-logo="logos/tarom.png">Tarom</option>
+            <option value="1" data-logo="logos/tunisair.png">Tunisair</option>
+            <option value="1" data-logo="logos/turkish_airlines.png">Turkish Airlines</option>
+            <option value="1" data-logo="logos/ukraine_international_airlines.png">Ukraine International Airlines</option>
+            <option value="1" data-logo="logos/united_airlines.png">United Airlines</option>
+            <option value="1" data-logo="logos/vueling.png">Vueling</option>
+            <option value="2" data-logo="logos/easyjet.png">Easyjet</option>
+            <option value="2" data-logo="logos/aer_lingus.png">Aer Lingus</option>
+            <option value="2" data-logo="logos/air_berlin.png">Air Berlin</option>
+            <option value="2" data-logo="logos/air_vallee.png">Air Vallée</option>
+            <option value="2" data-logo="logos/amavia.png">Amavia</option>
+            <option value="2" data-logo="logos/belle_air.png">Belle Air</option>
+            <option value="2" data-logo="logos/blue_air.png">Blue Air</option>
+            <option value="2" data-logo="logos/city_airlines.png">City Airlines</option>
+            <option value="2" data-logo="logos/jet2_com.png">Jet2.com</option>
+            <option value="2" data-logo="logos/jet4you.png">Jet4you</option>
+            <option value="2" data-logo="logos/luxair.png">Luxair</option>
+            <option value="2" data-logo="logos/monarch_airlines.png">Monarch Airlines</option>
+            <option value="2" data-logo="logos/nike_luftfahrt.png">Niké Luftfahrt</option>
+            <option value="2" data-logo="logos/norwegian_air_shuttle.png">Norwegian Air Shuttle</option>
+            <option value="2" data-logo="logos/pakistan_international_airlines.png">Pakistan International Airlines</option>
+            <option value="2" data-logo="logos/pegasus_air.png">Pegasus Air</option>
+            <option value="2" data-logo="logos/ryanair.png">Ryanair</option>
+            <option value="2" data-logo="logos/sky_work_airlin.png">Sky Work Airline</option>
+            <option value="2" data-logo="logos/transaereo_airlines.png">Transaereo Airlines</option>
+            <option value="2" data-logo="logos/transavia.png">Transavia</option>
+            <option value="2" data-logo="logos/wizz_air.png">Wizz Air</option>
+        </select>
+        <div id="terminal"></div>
+        <img id="airlineLogo" class="airline-logo" src="" alt="" style="display: none;">
+    </div>
+
+    <script>
+        const airlineSelector = document.getElementById('airline');
+        const terminalDisplay = document.getElementById('terminal');
+        const airlineLogo = document.getElementById('airlineLogo');
+
+        airlineSelector.addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const terminal = selectedOption.value;
+            const logo = selectedOption.getAttribute('data-logo');
+
+            if (terminal) {
+                terminalDisplay.textContent = `Your terminal is: Terminal ${terminal}`;
+                airlineLogo.src = logo;
+                airlineLogo.style.display = 'block';
+            } else {
+                terminalDisplay.textContent = '';
+                airlineLogo.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
