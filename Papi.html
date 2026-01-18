@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Papy Louis - Mes 3 Chansons</title>
+    <!-- Import des polices pour un style élégant et nostalgique -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Icones pour les boutons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --paper-color: #fdfbf7;
+            --ink-color: #2c3e50;
+            --accent-color: #c0392b; /* Rouge chaleureux */
+            --gold-color: #d4af37;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            font-family: 'Lato', sans-serif;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            /* La correction est ici : on laisse le contenu gérer sa hauteur naturellement */
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--paper-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+            /* Cette marge "auto" permet de centrer si possible, mais de scroller si ça dépasse */
+            margin: auto; 
+        }
+
+        /* Effet "photo ancienne" */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--gold-color);
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--ink-color);
+            margin-bottom: 10px;
+        }
+
+        .intro-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        /* Grille des cartes */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-visual {
+            height: 180px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Simulation visuel vinyle */
+        .vinyl-record {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: repeating-radial-gradient(
+              #111 0, 
+              #111 10px, 
+              #222 11px, 
+              #222 12px
+            );
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            animation: spin 20s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .card:hover .vinyl-record {
+            animation-play-state: running;
+        }
+
+        .vinyl-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .artist {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .song-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            color: var(--ink-color);
+        }
+
+        .play-btn {
+            display: inline-block;
+            background-color: var(--ink-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .play-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .play-btn i {
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            /* Petit ajustement pour mobile : on réduit les marges */
+            .intro-text {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pour Papy Louis</h1>
+            <div class="intro-text">
+                "Mission accomplie, j'ai retrouvé tes trois chansons ! Elles sont magnifiques et chargées de souvenirs..."
+            </div>
+        </header>
+
+        <div class="cards-grid">
+            <!-- Carte 1 -->
+            <div class="card">
+                <div class="card-visual">
+                    <div class="vinyl-record" style="animation-delay: 0s;">
+                        <div class="vinyl-label" style="background-color: #e74c3c;"></div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <div class="artist">Nana Mouskouri</div>
+                        <h3 class="song-title">Crie / Dix mille ans encore</h3>
+                    </div>
+                    <a href="https://www.youtube.com/results?search_query=Nana+Mouskouri+Crie+Dix+mille+ans+encore" target="_blank" class="play-btn">
+                        <i class="fas fa-play"></i> Écouter
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="card">
+                <div class="card-visual">
+                    <div class="vinyl-record" style="animation-delay: -2s;">
+                        <div class="vinyl-label" style="background-color: #3498db;"></div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <div class="artist">Danièle Messia</div>
+                        <h3 class="song-title">Le Paradis des musiciens</h3>
+                    </div>
+                    <a href="https://www.youtube.com/results?search_query=Dani%C3%A8le+Messia+Le+paradis+des+musiciens" target="_blank" class="play-btn">
+                        <i class="fas fa-play"></i> Écouter
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="card">
+                <div class="card-visual">
+                    <div class="vinyl-record" style="animation-delay: -5s;">
+                        <div class="vinyl-label" style="background-color: #f1c40f;"></div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <div class="artist">Jean-Marie Vivier</div>
+                        <h3 class="song-title">Vieillir</h3>
+                    </div>
+                    <a href="https://www.youtube.com/results?search_query=Jean-Marie+Vivier+Vieillir" target="_blank" class="play-btn">
+                        <i class="fas fa-play"></i> Écouter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
